@@ -1,0 +1,23 @@
+@import 'params';
+
+.workout-item-container{
+    display: inline-block;
+    background-color: $dark-blue;
+    color: $beige;
+    padding: 20px;
+
+    .date{
+        cursor: pointer;
+        text-align: center;
+
+        .label{
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+    }
+    
+    h2{
+        letter-spacing: 0.05em;
+    }
+    border-radius: 20px;
+}

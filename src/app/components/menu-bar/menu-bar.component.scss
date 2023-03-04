@@ -1,0 +1,25 @@
+@import 'params';
+
+.menu-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 40px;
+    background-color: $lilac;
+    align-items: center;
+
+    .menu-item{
+        margin: 20px;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        transition: 1s;
+    }
+
+    .active{
+        color: $dark-blue;
+        text-decoration-color: $dark-blue;
+        transition: all 200ms linear 0s;
+    }
+}

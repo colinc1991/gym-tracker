@@ -1,0 +1,31 @@
+<div class="add-exercise-container">
+    <div class="exercise-and-weight-container">
+        <select>
+            <option *ngFor="let exerciseName of exerciseNames">{{exerciseName}}</option>
+        </select>
+        <div class="radios-container">
+            <div class="radio-container">
+                <input type="radio" name="weight" id="kg" checked>
+                <label for="kg">Kg</label>
+            </div>
+        
+            <div class="radio-container">
+                <input type="radio" name="weight" id="lb">
+                <label for="lb">Lb</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="reps-count-container" *ngFor="let set of exercise.sets">
+        <input type="number">
+    </div>
+
+    <span class="add-set-container" (click)="addSet()">
+        <span class="plus">
+            +
+        </span>
+        <span>
+            Add set
+        </span>
+    </span>
+</div>

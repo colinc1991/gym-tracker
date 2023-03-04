@@ -1,0 +1,31 @@
+<h1>Create workout</h1>
+
+<span class="create-new-exercise" (click)="creatingNewExercise = true">
+    Exercise name not found?
+</span>
+
+<div *ngFor="let exercise of exercises">
+    <app-add-exercise [exercise]="exercise"></app-add-exercise>
+</div>
+
+<span class="add-exercise-container" (click)="addExercise()">
+    <span class="plus">
+        +
+    </span>
+    <span>
+        Add new exercise
+    </span>
+</span>
+
+<div class="popup-container" *ngIf="creatingNewExercise">
+    <div class="popup">
+        <div class="apart">
+            <label>Exercise name</label>
+            <span class="close" (click)="creatingNewExercise = false"> (X)</span>
+        </div>
+        <input type="text" (keyup)="checkExercises()" #newExerciseTextBox>
+        <span class="btn" [ngClass]="exerciseAlreadyExists ? 'disabled' : ''" (click)="addNewExercise()">
+            Add new exercise
+        </span>
+    </div>
+</div>

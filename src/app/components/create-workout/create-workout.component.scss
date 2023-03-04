@@ -1,0 +1,64 @@
+@import 'params';
+
+.create-new-exercise{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.add-exercise-container{
+    margin-top: 20px;
+    background-color: $dark-blue;
+    color: $beige;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    width: fit-content;
+    padding: 5px 20px;
+
+    .plus{
+        margin-right: 10px;
+        font-size:25px;
+    }
+}
+
+.popup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+
+    .popup{
+        padding: 20px;
+        background-color: $lilac;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .apart{
+            display: flex;
+            justify-content: space-between;
+
+            .close{
+                cursor: pointer;
+            }
+        }
+
+        .btn{
+            margin-top: 20px;
+            background-color: $dark-blue;
+            color: $beige;
+            cursor: pointer;
+            padding:8px;
+            width: fit-content;
+            border-radius: 5px;
+        }
+    }
+}

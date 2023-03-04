@@ -1,0 +1,20 @@
+@import 'params';
+
+.add-exercise-container{
+    display: flex;
+    flex-direction: column;
+    background-color: $lilac;
+    padding:20px;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+
+    .exercise-and-weight-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .radios-container{
+            display: flex;
+        }
+    }
+}
