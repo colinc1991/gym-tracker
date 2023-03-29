@@ -23,7 +23,7 @@
             <label>Exercise name</label>
             <span class="close" (click)="creatingNewExercise = false"> (X)</span>
         </div>
-        <input type="text" (keyup)="checkExercises()" #newExerciseTextBox>
+        <input type="text" (keyup)="checkExercises()" #newExerciseTextBox autofocus >
         <span class="btn" [ngClass]="exerciseAlreadyExists ? 'disabled' : ''" (click)="addNewExercise()">
             Add new exercise
         </span>
