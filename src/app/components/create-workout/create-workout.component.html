@@ -1,21 +1,28 @@
 <h1>Create workout</h1>
 
-<span class="create-new-exercise" (click)="creatingNewExercise = true">
-    Exercise name not found?
-</span>
-
 <div *ngFor="let exercise of exercises">
     <app-add-exercise [exercise]="exercise"></app-add-exercise>
 </div>
 
-<span class="add-exercise-container" (click)="addExercise()">
-    <span class="plus">
-        +
+<div class="buttons-container">
+    <span class="add-exercise-container" (click)="addExercise()">
+        <span class="plus">
+            +
+        </span>
+        <span>
+            Add new exercise
+        </span>
     </span>
-    <span>
-        Add new exercise
+    
+    <span class="add-exercise-container" (click)="creatingNewExercise = true">
+        <span class="plus">
+            +
+        </span>
+        <span>
+            Exercise name not found?
+        </span>
     </span>
-</span>
+</div>
 
 <div class="popup-container" *ngIf="creatingNewExercise">
     <div class="popup">

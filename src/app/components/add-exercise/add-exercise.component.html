@@ -1,8 +1,13 @@
 <div class="add-exercise-container">
-    <div class="exercise-and-weight-container">
-        <select>
+    <div class="exercise-container spaced-apart">
+        <label for="exercise-name">Exercise</label>
+        <select id="exercise-name">
             <option *ngFor="let exerciseName of exerciseNames">{{exerciseName}}</option>
         </select>
+    </div>
+
+    <div class="weight-type-container spaced-apart">
+        <label>Weight type</label>
         <div class="radios-container">
             <div class="radio-container">
                 <input type="radio" name="weight" [id]="'kg'+exerciseNames.length" id="kg" checked>
@@ -16,8 +21,16 @@
         </div>
     </div>
 
-    <div class="reps-count-container" *ngFor="let set of exercise.sets">
-        <input type="number">
+    <div class="reps-and-weight-container" *ngFor="let set of exercise.sets">
+        <div class="spaced-apart">
+            <label for="reps">Reps</label>
+            <input for="reps" type="number">
+        </div>
+    
+        <div class="spaced-apart">
+            <label for="weight">Weight</label>
+            <input for="weight" type="number">
+        </div>
     </div>
 
     <span class="add-set-container" (click)="addSet()">

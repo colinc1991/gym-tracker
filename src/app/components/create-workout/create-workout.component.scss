@@ -1,8 +1,8 @@
 @import 'params';
 
-.create-new-exercise{
-    cursor: pointer;
-    text-decoration: underline;
+.buttons-container{
+    display: flex;
+    justify-content: space-between;
 }
 
 .add-exercise-container{

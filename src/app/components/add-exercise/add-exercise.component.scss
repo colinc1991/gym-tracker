@@ -12,9 +12,24 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        .radios-container{
-            display: flex;
-        }
     }
+}
+
+.radios-container{
+    display: flex;
+}
+
+.spaced-apart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 17em;
+}
+
+.reps-and-weight-container{
+    margin: 10px 0;
+}
+
+.add-set-container{
+    cursor: pointer;
 }
