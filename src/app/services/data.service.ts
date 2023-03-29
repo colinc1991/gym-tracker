@@ -101,7 +101,11 @@ export class DataService {
         if (this.workouts.length == 0){
             this.workouts = this.getDummyWorkouts();
         }
-        return this.workouts.map(w => w.exercises.map(s => s.exerciseName)).flat().sort();
+
+        let allExerciseNames = this.workouts.map(w => w.exercises.map(s => this.capitalizeFirstLetter(s.exerciseName.toLowerCase()))).flat().concat(this.exerciseNames).sort();
+        let uniqueExerciseNames = [...new Set(allExerciseNames)]
+        
+        return uniqueExerciseNames;
     }
 
     exerciseAlreadyExists(exerciseName: string): boolean{
@@ -114,7 +118,11 @@ export class DataService {
     }
 
     addExerciseName(exerciseName: string){
-        this.exerciseNames.push(exerciseName);
-        this.exerciseNamesSub.next(this.exerciseNames);
+        this.exerciseNames.push(this.capitalizeFirstLetter(exerciseName));
+        this.exerciseNamesSub.next(this.exerciseNames.sort());
+    }
+
+    private capitalizeFirstLetter(string: string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 }
