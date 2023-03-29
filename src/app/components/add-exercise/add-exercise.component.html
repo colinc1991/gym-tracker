@@ -5,12 +5,12 @@
         </select>
         <div class="radios-container">
             <div class="radio-container">
-                <input type="radio" name="weight" id="kg" checked>
+                <input type="radio" name="weight" [id]="'kg'+exerciseNames.length" id="kg" checked>
                 <label for="kg">Kg</label>
             </div>
         
             <div class="radio-container">
-                <input type="radio" name="weight" id="lb">
+                <input type="radio" name="weight" [id]="'lb'+exerciseNames.length">
                 <label for="lb">Lb</label>
             </div>
         </div>

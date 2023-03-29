@@ -34,6 +34,7 @@ export class CreateWorkoutComponent implements OnInit {
     addNewExercise(){
         if (!this.exerciseAlreadyExists){
             this.dataService.addExerciseName(this.exerciseNameToBeAdded);
+            this.creatingNewExercise = false;
         }
     }
 

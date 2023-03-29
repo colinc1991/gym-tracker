@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Workout } from '../models/workout';
 
 @Injectable({
@@ -9,9 +10,17 @@ export class DataService {
     workouts: Workout[];
     exerciseNames: string[];
 
+    exerciseNamesSub = new Subject<string[]>();
+
     constructor() {
         this.workouts = [];
         this.exerciseNames = [];
+
+        this.exerciseNamesSub.asObservable().pipe(
+        ).subscribe(exerciseNames => {
+            this.exerciseNames = exerciseNames;
+            console.log("new exercise names values: ", exerciseNames);
+        });
     }
 
     getWorkouts(): Workout[] {
@@ -106,5 +115,6 @@ export class DataService {
 
     addExerciseName(exerciseName: string){
         this.exerciseNames.push(exerciseName);
+        this.exerciseNamesSub.next(this.exerciseNames);
     }
 }

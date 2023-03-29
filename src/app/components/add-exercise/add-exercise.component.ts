@@ -22,6 +22,10 @@ export class AddExerciseComponent implements OnInit {
                 weight: ''
             }
         ]
+
+        this.dataService.exerciseNamesSub.subscribe(newValues => {
+            this.exerciseNames = newValues;
+        })
     }
 
     addSet(): void{
