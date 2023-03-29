@@ -9,6 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class AddExerciseComponent implements OnInit {
     @Input() exercise: Exercise = new Exercise;
+    uniqueId: number;
     
     exerciseNames: string[] = [];
 
@@ -26,6 +27,8 @@ export class AddExerciseComponent implements OnInit {
         this.dataService.exerciseNamesSub.subscribe(newValues => {
             this.exerciseNames = newValues;
         })
+
+        this.uniqueId = Math.random() * 10000;
     }
 
     addSet(): void{

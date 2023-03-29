@@ -9,15 +9,17 @@
     <div class="weight-type-container spaced-apart">
         <label>Weight type</label>
         <div class="radios-container">
-            <div class="radio-container">
-                <input type="radio" name="weight" [id]="'kg'+exerciseNames.length" id="kg" checked>
-                <label for="kg">Kg</label>
-            </div>
-        
-            <div class="radio-container">
-                <input type="radio" name="weight" [id]="'lb'+exerciseNames.length">
-                <label for="lb">Lb</label>
-            </div>
+            <fieldset [id]="uniqueId">
+                <div class="radio-container">
+                    <input type="radio" [name]="uniqueId" [id]="'kg'+uniqueId" checked>
+                    <label [for]="'kg'+uniqueId">Kg</label>
+                </div>
+            
+                <div class="radio-container">
+                    <input type="radio" [name]="uniqueId" [id]="'lb'+uniqueId">
+                    <label [for]="'lb'+uniqueId">Lb</label>
+                </div>
+            </fieldset>
         </div>
     </div>
 
