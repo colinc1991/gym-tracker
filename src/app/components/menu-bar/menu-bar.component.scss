@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     min-height: 40px;
-    background-color: $lilac;
+    background-color: $white;
     align-items: center;
 
     .menu-item{
@@ -18,8 +18,8 @@
     }
 
     .active{
-        color: $dark-blue;
-        text-decoration-color: $dark-blue;
+        color: $cta-blue;
+        text-decoration-color: $cta-blue;
         transition: all 200ms linear 0s;
     }
 }
